@@ -1,5 +1,5 @@
 import Hapi from '@hapi/hapi'
-import { Server } from '@hapi/hapi'
+import { Server, ServerRoute } from '@hapi/hapi'
 import routes from './routes'
 
 const init = async () => {
@@ -13,7 +13,11 @@ const init = async () => {
   server.start()
 
   console.log(`🚀 Server ready at ${server.info.uri}`)
-  server.table().forEach(route => console.log(`${route.method}\t${route.path}`))
+  server
+    .table()
+    .forEach((route: ServerRoute) =>
+      console.log(`${route.method}\t${route.path}`)
+    )
 }
 
 process.on('uncaughtException', (err, origin) => {
