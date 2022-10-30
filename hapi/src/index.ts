@@ -5,7 +5,11 @@ import routes from './routes'
 const init = async () => {
   const server: Server = Hapi.server({
     port: process.env.PORT || 9090,
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+    routes: {
+      cors: { origin: ['*'] }
+    },
+    debug: { request: ['handler'] }
   })
 
   routes(server)

@@ -1,0 +1,18 @@
+type Mutation {
+  createUser(
+    user: CreateUserInput!
+  ): CreateUserOutput
+}
+
+input CreateUserInput {
+  id: String!
+  username: String!
+  name: String!
+  lastname: String!
+  dateOfBirth: String!
+}
+
+type CreateUserOutput {
+  data: String!
+}
+
