@@ -1,3 +1,5 @@
-export const url = process.env.HAPI_HASURA_URL
+export const url =
+  process.env.HAPI_HASURA_URL || 'http://hasura:8080/v1/graphql'
 
-export const adminSecret = process.env.HAPI_HASURA_ADMIN_SECRET
+export const adminSecret =
+  process.env.HAPI_HASURA_ADMIN_SECRET || 'myadminsecretkey'
