@@ -2,7 +2,7 @@ version: "3.6"
 services:
   postgres:
     container_name: "postgres"
-    image: postgres:alpine3.16
+    image: postgres:alpine3.18
     ports:
       - "5432:5432"
     volumes:
@@ -30,7 +30,7 @@ services:
       HAPI_HASURA_ADMIN_SECRET: "${HAPI_HASURA_ADMIN_SECRET}"
   hasura:
     container_name: "hasura"
-    image: hasura/graphql-engine:v2.13.0.cli-migrations-v3
+    image: hasura/graphql-engine:v2.33.1.cli-migrations-v3
     ports:
       - "8080:8080"
     depends_on:
